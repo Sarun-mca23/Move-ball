@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axis</title>
+</head>
+<body>
+    <div id="ball" style="background-color: rgb(225, 14, 152);
+top:0px;
+left:0px;
+border-radius: 50%;
+position: absolute;
+z-index: 5;
+width: 50px;
+height: 50px;">
+    </div>
+    <script>
+        var velocity=100;
+        var position=0;
+        var distance=650;
+        var ball=document.getElementById("ball");
+        var time=500;
+        let p1=position;
+        let motion=1;
+        function move()
+        {
+            position=position+velocity*motion; //function data
+                                             
+             if(position<=p1) // condition of if statement, it move the from its initial stage
+           {
+             
+            motion=1; //it plays the major roll
+    
+           }
+           
+           else if(position>=distance)
+           {
+             
+            motion=-1; //return the ball to its previous position
+    
+           }
+           ball.style.left=position +'px' 
+           ball.style.top=position +'px' 
+                                         //it defines the direction
+           
+        }
+        setInterval(move,time)
+        </script>
+</body>
+</html>
